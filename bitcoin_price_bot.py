@@ -10,9 +10,11 @@ def json_from_url(request):
     return json.loads(str_response)
 
 
-yesterdays_close_usd = tuple(json_from_url(
-    'http://api.coindesk.com/v1/bpi/historical/close.json?for=yesterday')
-                         ["bpi"].values())[0]
+historical_closes = sorted( json_from_url(
+    'http://api.coindesk.com/v1/bpi/historical/close.json')[
+    "bpi"].items() )
+yesterdays_close_usd = historical_closes[-1][1]
+    
 
 BPI = json_from_url('http://api.coindesk.com/v1/bpi/currentprice/CAD')['bpi']
 
