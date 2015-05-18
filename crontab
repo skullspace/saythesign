@@ -1,6 +1,6 @@
 SHELL=/bin/bash
-*/5 * * * * cd ~/saythesign/ && ~/saythesign/thisweekatskullspace.py | ~/saythesign/xmpp_thesign.py && ~/saythesign/xmpp_thesign.py < ~/saythesign/jayswelcome.txt
+3-58/5 * * * * cd ~/saythesign/ && ~/saythesign/thisweekatskullspace.py | ~/saythesign/xmpp_thesign.py ~/saythesign/jayswelcome.txt
 
-*/10 * * * * cd ~/saythesign/ && ~/saythesign/bitcoin_price_bot.py | ~/saythesign/xmpp_thesign.py && ~/saythesign/xmpp_thesign.py < ~/saythesign/jayswelcome.txt
+*/10 * * * * cd ~/saythesign/ && ~/saythesign/bitcoin_price_bot.py | ~/saythesign/xmpp_thesign.py ~/saythesign/jayswelcome.txt
 
-0 * * * * wget -O ~/saythesign/skullspace.ics http://www.google.com/calendar/ical/andreworr.ca_ca51jqs1vfhu7t3l9qno5qdihk%40group.calendar.google.com/public/basic.ics
+0 * * * * /usr/bin/wget -O ~/saythesign/skullspace.ics http://www.google.com/calendar/ical/andreworr.ca_ca51jqs1vfhu7t3l9qno5qdihk%40group.calendar.google.com/public/basic.ics

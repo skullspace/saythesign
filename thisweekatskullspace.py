@@ -32,9 +32,10 @@ upcoming = list(next_seven_day_events(c))
 upcoming.sort()
 
 today = date.today()
-print 'this {green}week at {red}Skullspace {yellow}' + ' '.join(
+for (event_date, time_str, e) in upcoming:
+    print 'this {green}week at {red}Skullspace {yellow}' + \
     ("{green}today{yellow}" if event_date == today
-     else event_date.strftime("%A") ) +
-    " -- {yellow}" + 
-    e[u'SUMMARY'].encode('UTF8') + " {green}" + time_str
-    for (event_date, time_str, e) in upcoming )
+     else event_date.strftime("%A") ) + \
+    " -- {yellow}" +  e[u'SUMMARY'].encode('UTF8') + " {green}" + time_str
+
+

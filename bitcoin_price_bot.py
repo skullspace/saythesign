@@ -25,14 +25,15 @@ abs_percent = abs(
 # replace constant with lookup
 bonehead_endowment_value = 0.55847658 * current_cad
 
-print( (
-        "coindesk.com/price "  
-        "%.2f USD/BTC, %.2f CAD, %s %.2f%% {yellow} "
-        "from yesterday (%.2f), " +
-        "{red}Bonehead {yellow}Bitcoin Endowment Trust is worth "
-        "{green}$%.0f" ) %
-       (current_usd, current_cad, up_down, abs_percent, yesterdays_close_usd,
-        bonehead_endowment_value) )
+print( "coindesk.com/price "  
+       "%.2f USD/BTC, %.2f CAD, %s %.2f%% {yellow} "
+       "from yesterday (%.2f)" %
+        (current_usd, current_cad, up_down, abs_percent, yesterdays_close_usd)
+       )
+
+print( "{red}Bonehead {yellow}Bitcoin Endowment Trust is worth "
+       "{green}$%.0f" %
+        bonehead_endowment_value )
     
 
 

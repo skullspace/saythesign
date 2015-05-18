@@ -1,16 +1,32 @@
 #!/usr/bin/python
 
 import xmpp
+import sys
+import time
 
-def simple_xmpp(server, username, passwd, to, msg):
-    client = xmpp.Client(server)
-    client.connect()
-    client.auth(username, passwd)
-    client.send(xmpp.Message(to, msg))
+SERVER = 'skullspace.ca'
+SIGN_POST_USER = 'thesign@skullspace.ca'
 
 if __name__ == "__main__":
     with file('userpass') as f:
         username = f.readline().strip()
         passwd = f.readline().strip()
-    simple_xmpp('skullspace.ca', username, passwd,
-                'thesign@skullspace.ca', raw_input() )
+
+    client = xmpp.Client(SERVER)
+    client.connect()
+    client.auth(username, passwd)
+
+    for line in sys.stdin:
+        client.send(xmpp.Message(
+                SIGN_POST_USER,
+                line.strip() + "\n" ))
+        time.sleep(1)
+
+    for file_name in sys.argv[1:]:
+        with open(file_name) as f:
+            for i, line in enumerate(f):
+                client.send(xmpp.Message(
+                        SIGN_POST_USER,
+                        line.strip() + "\n" ) )
+                time.sleep(1)
+
