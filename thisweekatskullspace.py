@@ -3,9 +3,10 @@
 from icalendar import Calendar, Event
 from pytz import timezone
 from datetime import date, datetime, timedelta
+import sys
 
-with open('skullspace.ics') as f:
-    ics_str = f.read()
+with open(sys.argv[1]) as f:
+    ics_str = f.read(-1)
 
 winnipeg = timezone('America/Winnipeg')
 
