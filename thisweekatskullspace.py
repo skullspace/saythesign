@@ -23,7 +23,8 @@ def next_seven_day_events(c):
             if isinstance(e[u'DTSTART'].dt, datetime):
                 event_daytime = event_daytime.astimezone(winnipeg)
                 event_date = event_daytime.date()
-                time_str = "%s:%s" % (event_daytime.hour, event_daytime.minute)
+                time_str = "%02d:%02d" % (
+                    event_daytime.hour, event_daytime.minute)
 
             if today <= event_date <= seven_from_today:
                 yield (event_date, time_str, e)
