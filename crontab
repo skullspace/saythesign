@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-1-56/5 * * * * cd ~/saythesign/ && ~/saythesign/thisweekatskullspace.py ~/saythesign/skullspace.ics | ~/saythesign/xmpp_thesign.py ~/saythesign/jayswelcome.txt 2>/dev/null
+1-56/5 * * * * cd ~/saythesign/ && ~/saythesign/thisweekatskullspace.py ~/saythesign/skullspace.ics | ~/saythesign/xmpp_thesign.py ~/saythesign/welcome.txt 2>/dev/null
 
 */10 * * * * cd ~/saythesign/ && ~/saythesign/bitcoin_price_bot.py | ~/saythesign/xmpp_thesign.py 2>/dev/null
 

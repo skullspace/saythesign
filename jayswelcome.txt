@@ -1,1 +1,0 @@
-{red}xmpp/jabber: {green}thesign{yellow}@skullspace.ca
